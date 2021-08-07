@@ -1,0 +1,19 @@
+<section>
+    <h1>Blue Ball Game</h1>
+        <p>Each Player will have <b>5</b> chance to make correct choice.</p>
+        <p>The aim is to choose blue ball.</p>
+        <p>If you select a ball and it turns blue you will win.</p>
+        <p>If you select a ball and it turns green then the blue ball will be on left</p>
+        <p>If you select a ball and it turns red then the blue ball will be on right</p>
+    <div>
+        <input type="button" (click)="createButton()" value="Start" class="btn btn-primary"><br>
+        <ng-container *ngFor="let ball of balls">
+                <input type="button" (click)="alert(ball)" value="{{ball.index}}" [style.background-color]="ball.color" style="border-radius: 50%;">
+        </ng-container>
+    </div><br>
+    <p [innerHtml]="msg"></p>
+    <div *ngIf="isShow">
+        <input type="button" (click)="playAgain()" value="Play Again" class="btn btn-primary">
+    </div>
+    
+</section>

@@ -1,0 +1,25 @@
+<section>
+    <h1 [innerHtml]='student.rollNo'></h1>
+    <h1 [innerText]='student.name'></h1>
+    <h2 [innerText]='student.cgpa' [style.background-color]='"red"'></h2>
+    <img [src]='student.picture' [style.width.px]='imgMaxWidth'>
+
+    <div>
+        <input type="button" (click)="load()" value="load" class="btn btn-primary">
+        
+        <table class="table table-bordered">
+            <tr>
+                <th>Roll No</th>
+                <th>Name</th>
+                <th>Cgpa</th>
+                <th>Image</th>
+            </tr>
+            <tr *ngFor="let s of students">
+                <td>{{s.rollNo}}</td>
+                <td>{{s.name}}</td>
+                <td>{{s.cgpa}}</td>
+                <td><img src='{{s.picture}}' [style.width.px]='imgMaxWidth'></td>
+            </tr>
+        </table>
+    </div>
+</section>
